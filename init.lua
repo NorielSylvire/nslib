@@ -26,8 +26,8 @@ such as GitHub: https://github.com/NorielSylvire
 
 local P = {}
 
+---@diagnostic disable: lowercase-global
 nslib = P
-
 --String utilities
 
 function P.first_to_upper(str)
@@ -70,7 +70,7 @@ end
 --[[
 Exclusive clamp. If value is within a range but excluding the bounds, return the value, otherwise return the max or the min.
 --]]
-function P.eclamp(value)
+function P.eclamp(value, min, max)
 	if value == nil then return nil end
 	if value < min then return min end
 	if value > max then return max end
@@ -80,7 +80,7 @@ end
 --[[
 Max exclusive clamp. If value is within a range but excluding the max, return the value, otherwise return the max or the min.
 --]]
-function P.maxeclamp(value)
+function P.maxeclamp(value, min, max)
 	if value == nil then return nil end
 	if value <= min then return min end
 	if value > max then return max end
@@ -90,7 +90,7 @@ end
 --[[
 Min exclusive clamp. If value is within a range but excluding the min, return the value, otherwise return the max or the min.
 --]]
-function P.mineclamp(value)
+function P.mineclamp(value, min, max)
 	if value == nil then return nil end
 	if value <= min then return min end
 	if value > max then return max end

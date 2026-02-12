@@ -28,6 +28,7 @@ local P = {}
 
 ---@diagnostic disable: lowercase-global
 nslib = P
+
 --String utilities
 
 function P.first_to_upper(str)
@@ -54,47 +55,47 @@ will print "You are over 18 years old"
 --]]
 
 function P.tern(cond, T, F)
-	if cond then return T else return F end
+    if cond then return T else return F end
 end
 
 --[[
 Inclusive clamp. If value is within a range, return the value, otherwise return the max or the min.
 --]]
 function P.clamp(value, min, max)
-	if value == nil then return nil end
-	if value <= min then return min end
-	if value >= max then return max end
-	return value
+    if value == nil then return nil end
+    if value <= min then return min end
+    if value >= max then return max end
+    return value
 end
 
 --[[
 Exclusive clamp. If value is within a range but excluding the bounds, return the value, otherwise return the max or the min.
 --]]
 function P.eclamp(value, min, max)
-	if value == nil then return nil end
-	if value < min then return min end
-	if value > max then return max end
-	return value
+    if value == nil then return nil end
+    if value < min then return min end
+    if value > max then return max end
+    return value
 end
 
 --[[
 Max exclusive clamp. If value is within a range but excluding the max, return the value, otherwise return the max or the min.
 --]]
 function P.maxeclamp(value, min, max)
-	if value == nil then return nil end
-	if value <= min then return min end
-	if value > max then return max end
-	return value
+    if value == nil then return nil end
+    if value <= min then return min end
+    if value > max then return max end
+    return value
 end
 
 --[[
 Min exclusive clamp. If value is within a range but excluding the min, return the value, otherwise return the max or the min.
 --]]
 function P.mineclamp(value, min, max)
-	if value == nil then return nil end
-	if value <= min then return min end
-	if value > max then return max end
-	return value
+    if value == nil then return nil end
+    if value <= min then return min end
+    if value > max then return max end
+    return value
 end
 
 return nslib
